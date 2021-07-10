@@ -18,7 +18,6 @@ class Gaussian():
         self.data = []
 
 
-    
     def calculate_mean(self):
     
         """Method to calculate the mean of the data set.
@@ -35,8 +34,6 @@ class Gaussian():
             return sum(self.data) / len(self.data)
         else:
             return 0
-
-                
 
 
     def calculate_stdev(self, sample=True):
@@ -120,6 +117,7 @@ class Gaussian():
         
         return (1.0 / (self.stdev * math.sqrt(2*math.pi))) * math.exp(-0.5*((x - self.mean) / self.stdev) ** 2)       
 
+
     def plot_histogram_pdf(self, n_spaces = 50):
 
         """Method to plot the normalized histogram of the data and a plot of the 
@@ -193,3 +191,17 @@ class Gaussian():
         
         return result
 
+
+    def __repr__(self):
+    
+        """Magic method to output the characteristics of the Gaussian instance
+        
+        Args:
+            None
+        
+        Returns:
+            string: characteristics of the Gaussian
+        
+        """
+        
+        return "mean {}, standard deviation {}".format(self.mean, self.stdev)
